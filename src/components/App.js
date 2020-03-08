@@ -5,11 +5,10 @@ import About from "./About";
 import ItemDetails from "./ItemDetails";
 import SellerList from "./SellerList";
 import GlobalStyles from "./GlobalStlyles";
-
+import SellerDetails from "./SellerDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App(props) {
-  //console.log(props) //props now has bother items and sellers***
   return (
     <Router>
       <Header />
@@ -26,6 +25,9 @@ function App(props) {
         <Route exact path="/sellers">
           <SellerList list={props.sellers} />{" "}
           {/* is this ok? or should i import instead on the sellers js page */}
+        </Route>
+        <Route exact path="/sellers/:sellerId">
+          <SellerDetails />
         </Route>
       </Switch>
       <GlobalStyles />

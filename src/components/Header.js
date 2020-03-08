@@ -14,6 +14,9 @@ const Header = () => {
             {" "}
             <Nav>Home</Nav>{" "}
           </Link>
+          <Link to="/sellers">
+            <Nav>Sellers</Nav>
+          </Link>
           <Link to="/about">
             {" "}
             <Nav>About</Nav>
@@ -44,10 +47,12 @@ const LogoImg = styled.img`
 const Nav = styled.span`
   color: darkgrey;
   text-decoration: none;
+  
   margin: 10px;
 `;
 
 const Container = styled.div`
+
   width: 95vw;
   a {
     text-decoration: none;
@@ -65,7 +70,7 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 20px;
+  
 `;
 
 const HeaderLinks = styled.div`

@@ -1,12 +1,17 @@
 import React from "react";
 import { sellers, items } from "../data";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 
 
 const ItemDetails = () => {
   let { itemId } = useParams();
+  let history = useHistory()
+
+  const backFunction = () => {
+    history.goBack();
+  }
 
   let viewedFruit = items[itemId];
   let currentSeller = sellers[viewedFruit.sellerId];
@@ -28,7 +33,9 @@ const ItemDetails = () => {
             <SellerImg src={currentSeller.avatarSrc}/>
           Sold by: {currentSeller.storeName}, by {currentSeller.id}
         </div>
+        <button onClick= {backFunction}> Back  </button>
       </StyledText>
+
     </Container>
   );
 };

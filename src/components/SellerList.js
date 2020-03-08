@@ -1,18 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import SpecificSeller from "./specificSeller"
-const SellerList = props => {
-let list = props.list
-console.log(list)
+import SpecificSeller from "./specificSeller";
+import { Link } from "react-router-dom";
+
+const SellerList = ({ list }) => {
+  let sellerPage = Object.values(list);
+  console.log(sellerPage);
+
   return (
-<>
-<SpecificSeller sellerPage = {Object.values(list)}> </SpecificSeller>
-
-</>
-
-
-  )
-
+    <>
+      {sellerPage.map(eachSeller => {
+        return (
+          <Link to={`/sellers/${eachSeller.id}`}>
+            <SpecificSeller sellerData={eachSeller}></SpecificSeller>
+          </Link>
+        );
+      })}
+    </>
+  );
 };
 
 export default SellerList;
