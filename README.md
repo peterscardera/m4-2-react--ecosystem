@@ -1,4 +1,4 @@
-# Workshop: Fruit store
+yarn # Workshop: Fruit store
 
 In this workshop, we'll build an online fruit store, with different items being sold, and different sellers.
 

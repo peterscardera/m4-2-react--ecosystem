@@ -20,6 +20,18 @@ const App = ({ user, data }) => {
 }
 ```
 
+we need to wrap 
+<div>
+    <Header user={user} />
+    <Content data={data} />
+</div>
+
+OR 
+
+<>
+    <Header user={user} />
+    <Content data={data} />
+</>
 ---
 
 Historically, we'd wrap adjacent children in a `<div>`:
@@ -129,6 +141,11 @@ yarn add prop-types
 ---
 
 We use PropTypes to _annotate props_ in your components
+
+
+ENFORCING THE TYOE OF VALUE IM EXPECTING 
+
+(SHAPE IS AN OBJECT)
 
 ```jsx
 import PropTypes from 'prop-types';

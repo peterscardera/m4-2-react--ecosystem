@@ -10,7 +10,7 @@
 ```jsx
 import styled from 'styled-components';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   background: blueviolet;
   border: none;
   padding: 16px 32px;
@@ -20,7 +20,7 @@ const Button = styled.button`
 `;
 
 ReactDOM.render(
-  <Button>Hello World</Button>,
+  <StyledButton>Hello World</Button>,
   document.querySelector('#root')
 );
 ```
@@ -91,6 +91,9 @@ Convert the following inline styles to styled-components
 
 ---
 
+
+
+
 ```css
 .wrapper {
   margin: 0 auto;
@@ -98,14 +101,20 @@ Convert the following inline styles to styled-components
 }
 
 ```
+//BELOW IS ADDING STYLED COMPONANTS
 
+import "styled" from "styled-componants"
 
+const styledWrapper = styled.div `
+  margin: 0 auto;
+  height: 300px;
+  `;
 ```jsx
 function App(props) {
   return (
-    <div className="wrapper">
+    <div className="wrapper">  //replace div with styledWrapper
       Hello World
-    </div>
+    </div>  //replace didistyledWrapper
   )
 }
 ```
@@ -131,16 +140,38 @@ function App(props) {
   height: 32px;
 }
 ```
+import "styled" from "styled-componants"
+
+const superButton = styled.button`
+  color: tomato;
+  font-weight: bold;
+  padding: 20px;
+
+  &:hover, &:focus {
+  transform: translateY(-3px);
+  }
+  `;
+  const superIcon = styled.icon`
+    width: 32px;
+    height: 32px;
+  `;
+
+  //INSTEAD OF REDOING IT WE COULD JUST DO
+ inside of the parent since its a child 
+  .icon {
+      width: 32px;
+    height: 32px;
+  }
 
 ```jsx
 function IconButton(props) {
   return (
-    <button className="btn">
-      <i className="icon">
+    <button className="btn"> //replace <button> with <superButton>
+      <i className="icon"> //replace with <superIcon>
         {props.icon}
-      </i>
+      </i> superIcon
       {props.children}
-    </button>
+    </button> //replace <button> with <superButton>
   )
 }
 ```

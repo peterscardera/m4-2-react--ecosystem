@@ -43,6 +43,11 @@ export const logOut = () => { ✂️ };
 
 ```js
 import { logIn, logOut } from '../../authentication-utils.js';
+
+//if we imported the whole doc => import {utils} from ../../authentication-utils.js';
+
+we cuold then use utils.signUp
+utils.logIn
 ```
 
 ---
@@ -72,7 +77,7 @@ export default data;
 
 ```js
 // src/index.js
-import theBestData from './data';
+import theBestData from './data'; [GOOD]
 ```
 
 ---
@@ -80,14 +85,19 @@ import theBestData from './data';
 ```js
 // src/data.js
 export const MAGIC_NUMBER = 123;
+
+
 ```
 
 ```js
+
 // src/index.js
-import MAGIC_NUMBER from './data';
+
+//we are exporting specific item which generate a specific item 
+import {MAGIC_NUMBER} from './data';
 ```
 
----
+--------------------------------
 
 ```js
 // src/data.js
@@ -101,15 +111,19 @@ export default data;
 
 ```js
 // src/index.js
-import {data, users} from './data';
+import data from './data'; // only good if we didnt export users and sessions
+
+//or if we just want users ==> import (users) from './data';
 ```
 
----
+------------------------------------
 
 ```js
 // src/data.js
 export default const baseball = '⚾️';
+//cant define it as youre expoeting it
 
+should be => 
 ```
 
 ```js

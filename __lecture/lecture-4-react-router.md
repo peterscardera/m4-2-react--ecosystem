@@ -32,6 +32,8 @@ A `<Route>` component consists of at least two things:
 
 Why might we do routing this way, instead of doing it with Express on the back-end?
 
+
+
 ---
 
 # Exercise
@@ -42,7 +44,7 @@ What gets rendered in the following snippets?
 
 ```jsx
 <div>
-  <Route exact={true} path="/">
+  <Route exact={true} path="/"> //so only / nothing else without exact it could still go to home page
     Home
   </Route>
   <Route path="/about">
@@ -87,7 +89,7 @@ All routes must be nested under a router
 
 ```jsx
 import {
-  BrowserRouter as Router,
+  BrowserRouter as Router, //renamed it here router
   Switch, 
   Route
 } from 'react-router-dom';
@@ -95,7 +97,7 @@ import {
 function App(props) {
   return (
     <Router>
-      <div>
+      <div> //div doesnt need to be here
         <Switch>
           <Route exact path="/">
             <Homepage />
@@ -120,7 +122,9 @@ export default App;
 # Link
 
 Use the provided `<Link>` component to get from one route to another.
+ same as a <a>  but without relaoding the PAGE!!!*** emulates the same thing as a link interms of going back 
 
+ 
 ```jsx
 import { Link } from 'react-router-dom';
 
