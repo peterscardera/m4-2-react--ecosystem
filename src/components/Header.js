@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "./logo.png";
 import styled, { keyframes } from "styled-components";
 
@@ -7,21 +7,14 @@ const Header = () => {
   return (
     <Container>
       <StyledHeader>
-        <Title>Fruit Emporium</Title>
         <LogoImg src={Logo} />
-        <HeaderLinks>
-          <Link to="/">
-            {" "}
-            <Nav>Home</Nav>{" "}
-          </Link>
-          <Link to="/sellers">
-            <Nav>Sellers</Nav>
-          </Link>
-          <Link to="/about">
-            {" "}
-            <Nav>About</Nav>
-          </Link>
-        </HeaderLinks>
+        <Title>Fruit Emporium</Title>
+
+          <StyledDiv>
+          <StyledLink to="/" exact activeStyle={{ color: "lightpink", borderBottom: "purple 2px solid"}}> Home </StyledLink>
+          <StyledLink to="/sellers" exact activeStyle= {{color: "lightpink", borderBottom:"purple 2px solid"}}>Sellers</StyledLink>
+          <StyledLink to="/about" exact activeStyle= {{color: "lightpink", borderBottom:"purple 2px solid"}}>About</StyledLink>
+          </StyledDiv>
       </StyledHeader>
     </Container>
   );
@@ -36,46 +29,61 @@ to {
 }
 `;
 const LogoImg = styled.img`
-  width: 70px;
-  height: 70px;
+  width: 45px;
+  height: 45px;
   animation: ${rotate360} infinite 30s linear;
   &:hover {
     animation: ${rotate360} infinite 2s linear;
   }
 `;
 
-const Nav = styled.span`
-  color: darkgrey;
-  text-decoration: none;
-  
-  margin: 10px;
+const StyledLink = styled(NavLink)`
+  color: palevioletred;
+  font-weight: bold;
+  padding: 9px;
+
+  &:hover {
+    transition: border-bottom .3s;
+    border-bottom: purple 2px solid;
+    opacity: .5;
+  }
 `;
 
-const Container = styled.div`
 
-  width: 95vw;
+const Container = styled.div`
+  width: 100vw;
+  
   a {
     text-decoration: none;
+    margin: 0px;
   }
 `;
 
 const Title = styled.span`
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.4rem;
 `;
 
 const StyledHeader = styled.header`
-  height: 100px;
-
+  height: 90px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  
+  margin: 0px;
 `;
 
 const HeaderLinks = styled.div`
-  display: flex;
-  justify-content: end;
+
 `;
+
+const StyledDiv = styled.div`
+width: 70vw;
+height: 40px;
+display: flex;
+justify-content: flex-end;
+
+
+
+`
+
 
 export default Header;

@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App(props) {
   return (
     <Router>
+        <GlobalStyles />
       <Header />
       <Switch>
         <Route exact path="/">
@@ -30,7 +31,7 @@ function App(props) {
           <SellerDetails />
         </Route>
       </Switch>
-      <GlobalStyles />
+    
     </Router>
   );
 }

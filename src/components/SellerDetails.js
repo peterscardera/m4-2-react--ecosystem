@@ -16,9 +16,10 @@ const SellerDetails = () => {
   let inventory = Object.values(items);
 
   return (
-    <div>
+    <Container>
+       {/* <button onClick= {backFunction}> Back  </button> */}
       <div> Welcome to {specificSeller.storeName}</div>
-      <button onClick= {backFunction}> Back  </button>
+     
       <div> {specificSeller.description}</div>
       <div>
         {inventory.map(item => {
@@ -32,11 +33,23 @@ const SellerDetails = () => {
         })}
       </div>
       
-    </div>
+    </Container>
   );
 };
 
 const StyledImg = styled.img`
   width: 100px;
+  opacity: .8;
+  border-radius: 25%;
+  padding: 20px;
+
+`;
+
+
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+align-items:center;
+
 `;
 export default SellerDetails;

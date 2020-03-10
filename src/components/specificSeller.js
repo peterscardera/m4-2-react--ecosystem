@@ -2,19 +2,21 @@ import React from "react";
 import styled from "styled-components";
 
 const SpecificSeller = ({ sellerData }) => {
-  console.log(sellerData);
+  
   return (
     <StyledContainer>
-      <StyledDiv> {sellerData.id} </StyledDiv>
+      
       <StyledImg src={sellerData.avatarSrc} />
+      <StyledDiv> {sellerData.id} </StyledDiv>
+    
     </StyledContainer>
   );
 };
 
 const StyledContainer = styled.div`
 display: flex; 
-flex-direction: column;
-align-items:start;
+flex-direction: row;
+justify-content: center;
 `
 
 const StyledDiv = styled.div`
@@ -25,6 +27,7 @@ text-transform: uppercase;
 
 const StyledImg = styled.img`
 border-radius: 30%;
-height: 400px;
+height: 200px;
+
 `
 export default SpecificSeller;
